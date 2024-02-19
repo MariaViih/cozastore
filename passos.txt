@@ -1,0 +1,9 @@
+configurando o git 
+
+git config --global user.name Maria Vitória 
+git config --global user.email mariaviih772@gmail.com
+------------------------------------------------------------------
+
+criar o projeto 
+
+dotnet new mvc -o Cozastore 
