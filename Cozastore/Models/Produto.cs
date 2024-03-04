@@ -9,7 +9,7 @@ namespace Cozastore.Models;
 {
      [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id  { get; set; }
+        public int Id  { get; set; }
 
         [Required(ErrorMessage ="Por favor, informe o Nome")]
         [StringLength(100, ErrorMessage ="O Nome deve possuir no máximo 100 caracteres")]
@@ -30,7 +30,7 @@ namespace Cozastore.Models;
         
         public string SKU {get; set;}
 
-        [Display(Name = "Preço")]
+        [Display(Name = "Preço de Venda")]
         [Column(TypeName = "decimal(12,2)")] //9.999.999.999,99
         [Required(ErrorMessage ="Por favor informe o Preço da venda ")]
 
@@ -61,6 +61,10 @@ namespace Cozastore.Models;
          public int CategoriaId {get; set;}
          [ForeignKey("CategoriaId")]
          public Categoria Categoria  {get; set;}
+
+
+
+         public ICollection<Estoque> Estoque { get; set; }
         
 
 
