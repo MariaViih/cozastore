@@ -1,27 +1,23 @@
 @model Cozastore.Models.Categoria
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Categoria";
 }
 
-<h1>Create</h1>
+<h1>Categoria</h1>
 
-<h4>Categoria</h4>
+<h4>Cadastro</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" method="POST" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Foto" class="control-label"></label>
-                <input asp-for="Foto" class="form-control" />
-                <span asp-validation-for="Foto" class="text-danger"></span>
-            </div>
+    
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Filtrar" /> @Html.DisplayNameFor(model => model.Filtrar)
@@ -34,16 +30,37 @@
             </div>
             <div class="form-group">
                 <label asp-for="CategoriaPaiId" class="control-label"></label>
-                <select asp-for="CategoriaPaiId" class ="form-control" asp-items="ViewBag.CategoriaPaiId"></select>
+                <select asp-for="CategoriaPaiId" class ="form-control" asp-items="ViewBag.CategoriaPaiId">
+                <option value="">Nenhuma categoria </option>
+                </select>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Foto" class="control-label"></label>
+                <img id="Preview" class="img-fluid w-100"/>
+                <input type="file" asp-for="Foto" class="form-control" accept=".jpg,.jpeg,.png,.gif,.jfifi" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar a listagem</a>
 </div>
 
+@section scripts {
+    <script>
+        window.addEventListener("load", function () {
+            document.querySelector("input[type=file]").addEventListener('change', function ()){
+                if(this.files && this.files[0]) {
+                    var img = document.getElementById('Preview');
+                    img.scr = URL.createObjectURL(this.files[0]);
+                }
+            });
+        });
+    </script>
+}
