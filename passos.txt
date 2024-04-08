@@ -55,6 +55,10 @@ dotnet-aspnet-codegenerator Controller -name TamanhosController -m Tamanho -dc A
 
 dotnet-aspnet-codegenerator Controller -name CategoriasController -m Categoria -dc AppDbContext -udl --relativeFolderPath Controllers
 
+
+
+
+
 Para acessar o projeto: 
 
 cd users
@@ -64,3 +68,5 @@ cd Cozastore
 dir 
 cd Cozastore
 dotnet run 
+
+
