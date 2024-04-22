@@ -54,7 +54,7 @@ namespace Cozastore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,codigoHexa")] Cor cor)
+        public async Task<IActionResult> Create([Bind("Id,Nome,CodigoHexa")] Cor cor)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Cozastore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,codigoHexa")] Cor cor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,CodigoHexa")] Cor cor)
         {
             if (id != cor.Id)
             {

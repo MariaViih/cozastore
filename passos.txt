@@ -1,72 +1,32 @@
-configurando o git 
+Configurando o Git
+git config --global user.name GalloJunior
+git config --global user.email gallojunior@gmail.com 
 
-git config --global user.name Maria Vitória 
-git config --global user.email mariaviih772@gmail.com
-------------------------------------------------------------------
+Criar o projeto
+dotnet new mvc -o Cozastore
 
-criar o projeto 
-
-dotnet new mvc -o Cozastore 
-
-
-Instalação das bibliotecas 
-
-digite nuget -- ctrl + shift + P
-
-pesquisar e instalar :
-
-                EntityFrameworkCore
-
-                EntityFrameworkCore.Design
+Pressione: Ctrl + Shift + P
+Digite: Nuget
+Pesquisar e Instalar:
+    - EntityFrameworkCore
+    - EntityFrameworkCore.Design
+    - EntityFrameworkCore.InMemory
+    - AspNet.Identity.EntityFrameworkCore
 
 
-                EntityFrameworkCore.InMemory
-
-                AspNet.Entity.EntityFrameworkCore
-
-                
-
-
-Instalar ferrramenta de geração de codigo 
-
+Instalar ferramenta de geração de código
 dotnet tool install -g dotnet-aspnet-codegenerator --version 8.0.1
 
 
-Gerar Controller e Views de CRUD:
-dotnet-aspnet-codegenerator Controller -name CoresController -m Cor -dc AppDbContext -udl --relativeFolderPath Controllers
-
-pressione :ctrl + shift + P
- Digite: Nuget
- pesquisar e instalar:
-
- Microsoft.VisualStudio.Web.CodeGeneration.Design
-
- Microsoft.EntityFrameworkCore.Tools
-
- Microsoft.EntityFrameworkCore.SqlServer
-
+Pressione: Ctrl + Shift + P
+Digite: Nuget
+Pesquisar e Instalar:
+    Microsoft.VisualStudio.Web.CodeGeneration.Design
+    Microsoft.EntityFrameworkCore.Tools
+    Microsoft.EntityFrameworkCore.SqlServer
 
 
 Gerar Controller e Views de CRUD:
-
-dotnet-aspnet-codegenerator Controller -name CoresController -m Cor -dc AppDbContext -udl --relativeFolderPath Controllers
-
-dotnet-aspnet-codegenerator Controller -name TamanhosController -m Tamanho -dc AppDbContext -udl --relativeFolderPath Controllers
-
-dotnet-aspnet-codegenerator Controller -name CategoriasController -m Categoria -dc AppDbContext -udl --relativeFolderPath Controllers
-
-
-
-
-
-Para acessar o projeto: 
-
-cd users
-cd etec
-cd desktop
-cd Cozastore
-dir 
-cd Cozastore
-dotnet run 
-
-
+dotnet-aspnet-codegenerator controller -name CoresController -m Cor -dc AppDbContext -udl --relativeFolderPath Controllers
+dotnet-aspnet-codegenerator controller -name TamanhosController -m Tamanho -dc AppDbContext -udl --relativeFolderPath Controllers
+dotnet-aspnet-codegenerator controller -name CategoriasController -m Categoria -dc AppDbContext -udl --relativeFolderPath Controllers

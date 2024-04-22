@@ -1,28 +1,25 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
 
 namespace Cozastore.Models;
 
 [Table("ProdutoFoto")]
-    public class ProdutoFoto
-   {
+public class ProdutoFoto
+{
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id  { get; set; }
+    public int Id { get; set; }
 
-        [Display(Name ="Produto")]
-        [Required(ErrorMessage ="Por favor, informe o Produto ")]
-        public int ProdutoId {get; set;}
-        [ForeignKey("ProdutoId")]
+    [Display(Name = "Produto")]
+    [Required(ErrorMessage = "Por favor, informe o Produto")]
+    public int ProdutoId { get; set; }
+    [ForeignKey("ProdutoId")]
+    public Produto Produto { get; set; }
 
-        public Produto Produto {get; set;}
+    [Required(ErrorMessage = "Por favor, faça upload da Foto")]
+    [StringLength(300)]
+    public string ArquivoFoto { get; set; }
 
-        [Required(ErrorMessage ="Por favor, faça o upload da Foto")]
-        [StringLength(300)]
-        public string ArquivoFoto {get; set;}
-
-        [Display(Name ="Foto Destaque?")]
-
-        public bool Destaque {get; set;}
-        }
+    [Display(Name = "Foto Destaque?")]
+    public bool Destaque { get; set; }
+}
