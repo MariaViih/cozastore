@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Cozastore.Data;
 using Cozastore.Models;
 
+
 namespace Cozastore.Controllers
 {
     public class CoresController : Controller
